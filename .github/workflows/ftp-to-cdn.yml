@@ -1,5 +1,5 @@
 on: push
-name: 🚀 Upload assets on bunny cnd assets-storage
+name: 🚀 Upload assets on bunny cnd assets-storage- ShadCN Studio
 jobs:
   web-deploy:
     name: 🎉 Upload
