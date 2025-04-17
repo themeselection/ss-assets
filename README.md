@@ -29,7 +29,7 @@ Table of contents:
 
 To use assets over cdn:
 ```
-https://cdn.shadcn-studio.com/ss-assets/path/to/file.extension
+https://cdn.shadcnstudio.com/ss-assets/path/to/file.extension
 ```
 
 Usage examples:
@@ -37,5 +37,5 @@ Usage examples:
 **Logo**
 > The designated file name for the **logo** is **logo.png**, enabling effortless usage across multiple platforms.
 ```
-https://cdn.shadcn-studio.com/ss-assets/logo/logo.png
+https://cdn.shadcnstudio.com/ss-assets/logo/logo.png
 ```
