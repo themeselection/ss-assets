@@ -1,0 +1,36 @@
+on: push
+name: 🚀 Upload assets on bunny cnd assets-storage- ShadCN Studio
+jobs:
+  web-deploy:
+    name: 🎉 Upload
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: uk.storage.bunnycdn.com
+          username: assets-storage
+          password: ${{ secrets.ftp_password }}
+          server-dir: ss-assets/
+          local-dir: ./
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github*    
+            **/.gitignore*
+            **/node_modules/**
+
+      - name: 🔄 Purge Bunny CDN Cache
+        env:
+          BUNNY_API_KEY: ${{ secrets.BUNNY_API_KEY }}
+          BUNNY_ZONE_ID: ${{ secrets.BUNNY_ZONE_ID }}
+        run: |
+          # Purge entire zone cache
+          curl -X POST "https://api.bunny.net/pullzones/$BUNNY_ZONE_ID/purgeCache" \
+              -H "AccessKey: $BUNNY_API_KEY" \
+              -H "Content-Type: application/json" \
+              -d '{"async": true}'

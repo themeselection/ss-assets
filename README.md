@@ -2,7 +2,7 @@
 
 Use this repo for 'Shadcn/Studio' products assets (Global CDN)
 
-> 💡 Use this repo as single source of truth for the template assets. 
+> 💡 Use this repo as single source of truth for the template assets.
 
 ## Folder Structure
 
