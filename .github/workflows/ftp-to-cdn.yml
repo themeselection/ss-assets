@@ -30,7 +30,6 @@ jobs:
           BUNNY_ZONE_ID: ${{ secrets.BUNNY_ZONE_ID }}
         run: |
           # Purge entire zone cache
-          curl -X POST "https://api.bunny.net/pullzones/$BUNNY_ZONE_ID/purgeCache" \
+          curl -X POST "https://api.bunny.net/pullzone/$BUNNY_ZONE_ID/purgeCache" \
               -H "AccessKey: $BUNNY_API_KEY" \
               -H "Content-Type: application/json" \
-              -d '{"async": true}'
